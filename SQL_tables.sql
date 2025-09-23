@@ -5,7 +5,7 @@ SHOW TABLES;
 CREATE TABLE book(
 book_id INT AUTO_INCREMENT, 
 book_name VARCHAR(100) NOT NULL,
-isbn VARCHAR(50) NOT NULL UNIQUE,
+isbn VARCHAR(150) NOT NULL UNIQUE,
 pages INT NOT NULL,
 publisher_id INT,
 book_status ENUM('Completed', 'In process', 'Not started', 'Abandoned') NOT NULL,
@@ -64,6 +64,8 @@ PRIMARY KEY (book_id, book_type_id),
 FOREIGN KEY (book_id) REFERENCES book(book_id),
 FOREIGN KEY (book_type_id) REFERENCES book_type(book_type_id)
 );
+
+
 
 
 
