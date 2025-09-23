@@ -1,5 +1,6 @@
 CREATE DATABASE my_library;
 USE my_library;
+SHOW TABLES;
 
 CREATE TABLE book(
 book_id INT AUTO_INCREMENT, 
@@ -52,7 +53,7 @@ FOREIGN KEY (genre_id) REFERENCES genre(genre_id)
 
 CREATE TABLE book_type(
 book_type_id INT AUTO_INCREMENT,
-book_type_name VARCHAR(50) NOT NULL,
+book_type_name VARCHAR(50) NOT NULL UNIQUE,
 PRIMARY KEY (book_type_id)
 );
 
@@ -64,4 +65,5 @@ FOREIGN KEY (book_id) REFERENCES book(book_id),
 FOREIGN KEY (book_type_id) REFERENCES book_type(book_type_id)
 );
 
-SHOW TABLES;
+
+
